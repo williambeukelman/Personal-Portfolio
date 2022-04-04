@@ -1,6 +1,7 @@
 <script>
   import Header from "./components/Header.svelte";
   import Skills from "./components/Skills.svelte";
+  import Projects from "./components/Projects.svelte";
 </script>
 
 <style>
@@ -18,5 +19,6 @@
   <!-- Hero Section -->
   <Header/>
   <Skills/>
+  <Projects/>
 
 </main>

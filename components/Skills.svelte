@@ -37,6 +37,26 @@
   }
 </style>
 
+<script>
+  let skills = [
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+      name: "Svelte"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+      name: "Vue3"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+      name: "Bootstrap"
+    }
+  ];
+</script>
+
 <!-- Skills Section -->
 <div class="container section-skills">
 	<div class="row py-3">
@@ -47,24 +67,14 @@
 	</div>
 	<div class="row skill-icons">
 		<div class="d-flex gap-3 flex-wrap justify-content-between">
-			<button type="button" class="btn btn-outline-dark">
-				<div class="skill-card">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="svelte-logo" />
-					<span class="badge bg-dark">Svelte</span>
-				</div>
-			</button>
-			<button type="button" class="btn btn-outline-dark">
-				<div class="skill-card">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="vue3-logo" />
-					<span class="badge bg-dark">Vue3</span>
-				</div>
-			</button>
-			<button type="button" class="btn btn-outline-dark">
-				<div class="skill-card">
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstrap-logo" />
-					<span class="badge bg-dark">Bootstrap</span>
-				</div>
-			</button>
+      {#each skills as skill}
+        <button type="button" class="btn btn-outline-dark">
+          <div class="skill-card">
+            <img src="{skill.url}" alt="{skill.name}-logo" />
+            <span class="badge bg-dark">{skill.name}</span>
+          </div>
+        </button>
+      {/each}
 		</div>
 	</div>
 </div>
