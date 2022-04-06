@@ -11,6 +11,7 @@
     border-radius: 1rem;
   }
   .card-img-top {
+    height: 100%;
     width: 100%;
     filter: blur(1px);
     scale: 1.05;
@@ -41,20 +42,59 @@
 </style>
 
 <script>
+  let projects = [
+    {
+      title: "Music Library Application",
+      desc:
+        "A simple mock music library and player coded in Vue3, HTML, CSS, and JS.",
+      demo: "https://v62igf.csb.app/artist",
+      code: "https://github.com/williambeukelman/Music-Library-App",
+      image:
+        "https://camo.githubusercontent.com/ad0810c98f921ee6571c2274ea4398eb022877d97642ea0b974dd482b16db718/68747470733a2f2f77696c6c69616d6265756b656c6d616e2e6769746875622e696f2f6d757369632d706c617965722d616c62756d732e706e67",
+      badges: [
+        {
+          name: "vue3",
+          url:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+        }
+      ]
+    },
+    {
+      title: "Recyclical Energy",
+      desc:
+        "A mock business website I designed and coded using Bootstrap in a parallax style.",
+      demo: "https://owv4in.csb.app/",
+      code: "https://github.com/williambeukelman/Recyclical-Energy-Website/",
+      image: "https://williambeukelman.github.io/energy-home.png",
+      badges: [
+        {
+          name: "Bootstrap",
+          url:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+        }
+      ]
+    }
+  ];
 </script>
 
 <!-- Projects Section -->
 <div class="container-fluid my-3 p-2">
 	<div class="row d-flex justify-content-center">
+  {#each projects as project}
     <div class="card">
-      <img class="language-badge" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="vue3-logo" />
-      <img class="card-img-top" src="https://camo.githubusercontent.com/ad0810c98f921ee6571c2274ea4398eb022877d97642ea0b974dd482b16db718/68747470733a2f2f77696c6c69616d6265756b656c6d616e2e6769746875622e696f2f6d757369632d706c617965722d616c62756d732e706e67" alt="project">
+      <div class="langs">
+      {#each project.badges as badge} 
+        <img class="language-badge" src="{badge.url}" alt="{badge.name}-logo" />
+      {/each}
+      </div>
+      <img class="card-img-top" src="{project.image}" alt="project">
       <div class="card-body">
-        <h5 class="card-title">Music Library Application</h5>
-        <p class="card-text">A simple mock music library and player coded in Vue3, HTML, CSS, and JS.</p>
-        <a href="https://v62igf.csb.app/artists" class="btn btn-outline-danger">Demo</a> 
-        <a href="https://github.com/williambeukelman/Music-Library-App" class="btn btn-outline-light">Code</a>
+        <h5 class="card-title">{project.title}</h5>
+        <p class="card-text">{project.desc}</p>
+        <a href="{project.demo}" class="btn btn-outline-danger">Demo</a> 
+        <a href="{project.code}" class="btn btn-outline-light">Code</a>
       </div>
     </div>
+  {/each}
 	</div>
 </div>
