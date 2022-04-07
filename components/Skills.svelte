@@ -53,6 +53,46 @@
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
       name: "Bootstrap"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+      name: "C#"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+      name: "Flask"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      name: "Git"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      name: "Javascript"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
+      name: "Jquery"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-plain.svg",
+      name: "Linux"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      name: "Python"
+    },
+    {
+      url:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+      name: "Arduino"
     }
   ];
 </script>

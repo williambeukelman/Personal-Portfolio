@@ -4,15 +4,27 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
+  .projectBox {
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(22rem);
+    scroll-snap-type: y mandatory;
+  }
   .card {
+    scroll-snap-align: start;
     max-width: 50%;
+    min-width: 22rem;
     padding: 0;
     overflow: hidden;
     border-radius: 1rem;
+    background-color: transparent;
+    color: white;
   }
   .card-img-top {
     height: 100%;
     width: 100%;
+    z-index: -1;
     filter: blur(1px);
     scale: 1.05;
     transition: all 0.3s linear;
@@ -73,13 +85,29 @@
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
         }
       ]
+    },
+    {
+      title: "Twenty Letter Wordle",
+      desc:
+        "A Svelte application intended to mimic the game of Wordle but with a much longer letter count",
+      demo: "https://s9o1y6.csb.app/",
+      code: "https://github.com/williambeukelman/Twenty-Letter-Wordle/",
+      image:
+        "https://williambeukelman.github.io/screenshot-twenty-letter-wordle.png",
+      badges: [
+        {
+          name: "Svelte",
+          url:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg"
+        }
+      ]
     }
   ];
 </script>
 
 <!-- Projects Section -->
 <div class="container-fluid my-3 p-2">
-	<div class="row d-flex justify-content-center">
+	<div class="projectBox d-flex gap-2 flex-row">
   {#each projects as project}
     <div class="card">
       <div class="langs">

@@ -20,5 +20,6 @@
   <Header/>
   <Skills/>
   <Projects/>
+  <p>Some placeholder content to make the page longer for testing purposes.</p>
 
 </main>

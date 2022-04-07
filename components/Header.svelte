@@ -1,5 +1,7 @@
 <script>
   import profilePic from "../assets/avatar_sweater_transparent.png";
+  //https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg
+  //https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg
 </script>
 
 <style>
