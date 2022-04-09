@@ -2,7 +2,7 @@
   /** Temp Mobile dev settings **/
   div.container {
     max-width: 450px;
-    min-width: 450px;
+    min-width: 350px;
   }
   .section-skills {
     background: white;
@@ -38,63 +38,78 @@
 </style>
 
 <script>
+  import { skill } from "../stores.js";
   let skills = [
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
-      name: "Svelte"
+      name: "Svelte",
+      btn: true
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-      name: "Vue3"
+      name: "Vue3",
+      btn: true
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-      name: "Bootstrap"
+      name: "Bootstrap",
+      btn: true
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-      name: "C#"
+      name: "C#",
+      btn: false
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-      name: "Flask"
+      name: "Flask",
+      btn: false
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      name: "Git"
+      name: "Git",
+      btn: false
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      name: "Javascript"
+      name: "Javascript",
+      btn: true
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
-      name: "Jquery"
+      name: "Jquery",
+      btn: false
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-plain.svg",
-      name: "Linux"
+      name: "Linux",
+      btn: false
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      name: "Python"
+      name: "Python",
+      btn: true
     },
     {
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
-      name: "Arduino"
+      name: "Arduino",
+      btn: false
     }
   ];
+  function updateSkill(value) {
+    skill.set(value);
+  }
 </script>
 
 <!-- Skills Section -->
@@ -106,15 +121,21 @@
 		</div>
 	</div>
 	<div class="row skill-icons">
-		<div class="d-flex gap-3 flex-wrap justify-content-between">
+		<div class="d-flex gap-3 flex-wrap justify-content-start">
       {#each skills as skill}
-        <button type="button" class="btn btn-outline-dark">
+        
+        <button type="button" disabled="{!skill.btn}" class="btn btn-outline-dark" on:click={() => updateSkill(skill.name)}>
           <div class="skill-card">
             <img src="{skill.url}" alt="{skill.name}-logo" />
             <span class="badge bg-dark">{skill.name}</span>
           </div>
         </button>
       {/each}
+      <button type="button" class="btn btn-dark mx-3" on:click={() => updateSkill("")}>
+        <div class="skill-card">
+          All Projects
+        </div>
+      </button>
 		</div>
 	</div>
 </div>

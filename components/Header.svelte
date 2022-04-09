@@ -1,14 +1,12 @@
 <script>
   import profilePic from "../assets/avatar_sweater_transparent.png";
-  //https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg
-  //https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg
 </script>
 
 <style>
   /** Temp Mobile dev settings **/
   div.container {
     max-width: 450px;
-    min-width: 450px;
+    min-width: 350px;
   }
   .profile {
     max-width: 12rem;
@@ -30,14 +28,18 @@
     border-radius: 0.5rem;
     background: linear-gradient(to right, tomato, blueviolet);
   }
-  h2 {
+  h5 {
     text-transform: uppercase;
-    opacity: 0.6;
+    opacity: 0.75;
     line-height: 50%;
   }
   .page-divider svg {
     width: 100%;
     max-height: 4rem;
+  }
+  .social-icon {
+    width: 3rem;
+    filter: invert();
   }
 </style>
 
@@ -47,7 +49,17 @@
       <div class="col">
         <img src={profilePic} class="img img-fluid profile rounded-circle" alt="profile">
         <h1>William Beukelman</h1>
-        <h2>Tagline about me</h2>
+        <h5>Aspiring Software Developer</h5>
+      </div>
+    </div>
+    <div class="row py-2">
+      <div class="col">
+        <a href="https://github.com/williambeukelman" target="_blank" class="btn btn-transparent">
+          <img class="img-fluid social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="github-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/williambeuk/" target="_blank" class="btn btn-transparent">
+          <img class="img-fluid social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" alt="linkedin-logo">
+        </a>
       </div>
     </div>
   </div>

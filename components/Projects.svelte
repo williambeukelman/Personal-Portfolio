@@ -51,9 +51,21 @@
     right: 1rem;
     border-bottom: 5px solid white;
   }
+  h1::after {
+    display: block;
+    content: "";
+    width: 80%;
+    margin-top: 0.1rem;
+    margin-right: auto;
+    margin-left: auto;
+    height: 0.3rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, tomato, blueviolet);
+  }
 </style>
 
 <script>
+  import { skill } from "../stores.js";
   let projects = [
     {
       title: "Music Library Application",
@@ -65,7 +77,7 @@
         "https://camo.githubusercontent.com/ad0810c98f921ee6571c2274ea4398eb022877d97642ea0b974dd482b16db718/68747470733a2f2f77696c6c69616d6265756b656c6d616e2e6769746875622e696f2f6d757369632d706c617965722d616c62756d732e706e67",
       badges: [
         {
-          name: "vue3",
+          name: "Vue3",
           url:
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
         }
@@ -103,12 +115,21 @@
       ]
     }
   ];
+  $: filterProjects =
+    $skill === ""
+      ? projects
+      : projects.filter(item => {
+          return item.badges.some(badge => {
+            return badge.name === $skill;
+          });
+        });
 </script>
 
 <!-- Projects Section -->
 <div class="container-fluid my-3 p-2">
+  <h1 class="mb-4">{$skill} Projects</h1>
 	<div class="projectBox d-flex gap-2 flex-row">
-  {#each projects as project}
+  {#each filterProjects as project}
     <div class="card">
       <div class="langs">
       {#each project.badges as badge} 
