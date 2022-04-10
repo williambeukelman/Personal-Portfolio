@@ -2,6 +2,8 @@
   import Header from "./components/Header.svelte";
   import Skills from "./components/Skills.svelte";
   import Projects from "./components/Projects.svelte";
+  import Education from "./components/Education.svelte";
+  import Footer from "./components/Footer.svelte";
 </script>
 
 <style>
@@ -20,6 +22,8 @@
   <Header/>
   <Skills/>
   <Projects/>
+  <Education/>
   <p>Some placeholder content to make the page longer for testing purposes.</p>
+  <Footer/>
 
 </main>

@@ -1,7 +1,6 @@
 <style>
   /** Temp Mobile dev settings **/
   div.container {
-    max-width: 450px;
     min-width: 350px;
   }
   .section-skills {
