@@ -13,7 +13,7 @@
   }
   .card {
     scroll-snap-align: start;
-    max-width: 50%;
+    max-width: 35rem;
     min-width: 22rem;
     padding: 0;
     overflow: hidden;
@@ -55,6 +55,7 @@
     display: block;
     content: "";
     width: 80%;
+    max-width: 35rem;
     margin-top: 0.1rem;
     margin-right: auto;
     margin-left: auto;
@@ -65,6 +66,7 @@
 </style>
 
 <script>
+  import { scale } from "svelte/transition";
   import { skill } from "../stores.js";
   let projects = [
     {
@@ -128,9 +130,9 @@
 <!-- Projects Section -->
 <div class="container-fluid my-3 p-2">
   <h1 class="mb-4">{$skill} Projects</h1>
-	<div class="projectBox d-flex gap-2 flex-row">
+	<div class="projectBox d-flex gap-2 flex-row justify-content-start">
   {#each filterProjects as project}
-    <div class="card">
+    <div class="card mb-4" transition:scale|local>
       <div class="langs">
       {#each project.badges as badge} 
         <img class="language-badge" src="{badge.url}" alt="{badge.name}-logo" />

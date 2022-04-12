@@ -27,6 +27,7 @@
     display: block;
     content: "";
     width: 80%;
+    max-width: 35rem;
     margin-top: 0.1rem;
     margin-right: auto;
     margin-left: auto;

@@ -10,11 +10,11 @@
   }
   .profile {
     max-width: 12rem;
-    background: linear-gradient(tomato, blueviolet);
+    background: linear-gradient(0deg, tomato, blueviolet);
     filter: grayscale(0.3);
   }
   .section-header {
-    background-color: black;
+    background: black;
     color: white;
   }
   h1::after {
@@ -32,10 +32,6 @@
     text-transform: uppercase;
     opacity: 0.75;
     line-height: 50%;
-  }
-  .page-divider svg {
-    width: 100%;
-    max-height: 4rem;
   }
   .social-icon {
     width: 3rem;
