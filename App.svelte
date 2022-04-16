@@ -1,5 +1,6 @@
 <script>
   import Header from "./components/Header.svelte";
+  import About from "./components/About.svelte";
   import Skills from "./components/Skills.svelte";
   import Projects from "./components/Projects.svelte";
   import Education from "./components/Education.svelte";
@@ -20,10 +21,10 @@
 <main>
   <!-- Hero Section -->
   <Header/>
+  <About/>
   <Skills/>
   <Projects/>
   <Education/>
-  <p>Some placeholder content to make the page longer for testing purposes.</p>
   <Footer/>
 
 </main>

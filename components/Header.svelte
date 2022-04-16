@@ -48,7 +48,7 @@
         <h5>Aspiring Software Developer</h5>
       </div>
     </div>
-    <div class="row py-2">
+    <div class="row py-2 pb-4">
       <div class="col">
         <a href="https://github.com/williambeukelman" target="_blank" class="btn btn-transparent">
           <img class="img-fluid social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="github-logo">
