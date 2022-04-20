@@ -19,7 +19,7 @@
   }
   .card {
     scroll-snap-align: start;
-    min-width: 25rem;
+    min-width: 21.5rem;
     width: 25rem;
     height: 20rem;
     padding: 0;
