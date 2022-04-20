@@ -1,4 +1,5 @@
 <script>
+  import Navigation from "./components/Navigation.svelte";
   import Header from "./components/Header.svelte";
   import About from "./components/About.svelte";
   import Skills from "./components/Skills.svelte";
@@ -19,9 +20,8 @@
 </style>
 
 <main>
-  <!-- Hero Section -->
+  <Navigation id="top"/>
   <Header/>
-  <About/>
   <Skills/>
   <Projects/>
   <Education/>

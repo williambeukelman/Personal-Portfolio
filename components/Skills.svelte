@@ -86,7 +86,7 @@
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
       name: "Jquery",
-      btn: false
+      btn: true
     },
     {
       url:
@@ -98,7 +98,7 @@
       url:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
       name: "Python",
-      btn: true
+      btn: false
     },
     {
       url:
@@ -110,10 +110,17 @@
   function updateSkill(value) {
     skill.set(value);
   }
+  function scroll() {
+    const el = document.querySelector("#projects");
+    if (!el) return;
+    el.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 </script>
 
 <!-- Skills Section -->
-<div class="container section-skills">
+<div class="container section-skills" id="skills">
 	<div class="row py-3">
 		<div class="col">
 			<h1>Skills & Technologies</h1>
@@ -121,10 +128,15 @@
 		</div>
 	</div>
 	<div class="row skill-icons">
-		<div class="d-flex gap-3 flex-wrap justify-content-start">
+		<div class="d-flex gap-3 flex-wrap justify-content-center">
       {#each skills as skill}
         
-        <button type="button" disabled="{!skill.btn}" class="btn btn-outline-dark" on:click={() => updateSkill(skill.name)}>
+        <button type="button" disabled="{!skill.btn}" class="btn btn-outline-dark" 
+        on:click={() => { 
+          updateSkill(skill.name); 
+          scroll(); 
+          } 
+        }>
           <div class="skill-card">
             <img src="{skill.url}" alt="{skill.name}-logo" />
             <span class="badge bg-dark">{skill.name}</span>
