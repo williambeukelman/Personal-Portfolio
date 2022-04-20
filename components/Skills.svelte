@@ -39,70 +39,49 @@
 
 <script>
   import { skill } from "../stores.js";
+  import { icons } from "../stores.js";
   let skills = [
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
       name: "Svelte",
       btn: true
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-      name: "Vue3",
+      name: "Vue",
       btn: true
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
       name: "Bootstrap",
       btn: true
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-      name: "C#",
+      name: "Csharp",
       btn: false
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
       name: "Flask",
       btn: false
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       name: "Git",
       btn: false
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       name: "Javascript",
       btn: true
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
       name: "Jquery",
       btn: true
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-plain.svg",
       name: "Linux",
       btn: false
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
       name: "Python",
       btn: false
     },
     {
-      url:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
       name: "Arduino",
       btn: false
     }
@@ -138,7 +117,7 @@
           } 
         }>
           <div class="skill-card">
-            <img src="{skill.url}" alt="{skill.name}-logo" />
+            <img src="{$icons[skill.name]}" alt="{skill.name}-logo" />
             <span class="badge bg-dark">{skill.name}</span>
           </div>
         </button>

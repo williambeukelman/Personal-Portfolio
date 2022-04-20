@@ -81,6 +81,8 @@
 <script>
   import { scale } from "svelte/transition";
   import { skill } from "../stores.js";
+  import { icons } from "../stores.js";
+  import screenshot_paper from "../assets/screenshot_paper.png";
   let projects = [
     {
       title: "Music Library Application",
@@ -90,18 +92,7 @@
       code: "https://github.com/williambeukelman/Music-Library-App",
       image:
         "https://camo.githubusercontent.com/ad0810c98f921ee6571c2274ea4398eb022877d97642ea0b974dd482b16db718/68747470733a2f2f77696c6c69616d6265756b656c6d616e2e6769746875622e696f2f6d757369632d706c617965722d616c62756d732e706e67",
-      badges: [
-        {
-          name: "Vue3",
-          url:
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-        },
-        {
-          name: "Bootstrap",
-          url:
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-        }
-      ]
+      badges: ["Vue", "Bootstrap"]
     },
     {
       title: "Recyclical Energy",
@@ -110,13 +101,7 @@
       demo: "https://owv4in.csb.app/",
       code: "https://github.com/williambeukelman/Recyclical-Energy-Website/",
       image: "https://williambeukelman.github.io/energy-home.png",
-      badges: [
-        {
-          name: "Bootstrap",
-          url:
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-        }
-      ]
+      badges: ["Bootstrap"]
     },
     {
       title: "Twenty Letter Wordle",
@@ -126,13 +111,7 @@
       code: "https://github.com/williambeukelman/Twenty-Letter-Wordle/",
       image:
         "https://williambeukelman.github.io/screenshot-twenty-letter-wordle.png",
-      badges: [
-        {
-          name: "Svelte",
-          url:
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg"
-        }
-      ]
+      badges: ["Svelte"]
     },
     {
       title: "Sycamore Nursery Website",
@@ -140,27 +119,25 @@
       demo: "https://rgx9lb.csb.app/",
       code: "https://codesandbox.io/s/rgx9lb",
       image: "https://williambeukelman.github.io/screenshot-nursery-website.png",
-      badges: [
-        {
-          name: "Javascript",
-          url:
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        },
-        {
-          name: "Jquery",
-          url:
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
-        }
-      ]
+      badges: ["Javascript", "Jquery"]
+    },
+    {
+      title: "Educational Game Proposal",
+      desc: "A project proposal complete with concept maps and forms.",
+      demo: "",
+      code: "https://www.overleaf.com/read/nftsycdnxdrb",
+      image: screenshot_paper,
+      badges: []
     }
   ];
   $: filterProjects =
     $skill === ""
       ? projects
       : projects.filter(item => {
-          return item.badges.some(badge => {
-            return badge.name === $skill;
-          });
+          return item.badges.includes($skill);
+          /*.some(badge => {
+                  return badge === $skill;
+                });*/
         });
 </script>
 
@@ -171,16 +148,16 @@
     {#each filterProjects as project}
       <div class="card mb-4" transition:scale|local>
         <div class="langs">
-        {#each project.badges as badge} 
-          <img class="language-badge" src="{badge.url}" alt="{badge.name}-logo" />
-        {/each}
+        {#if project.badges}{#each project.badges as badge} 
+          <img class="language-badge" src="{$icons[badge]}" alt="{badge}-logo" />
+        {/each}{/if}
         </div>
         <img class="card-img-top" src="{project.image}" alt="project">
         <div class="card-body">
           <h5 class="card-title">{project.title}</h5>
           <p class="card-text">{project.desc}</p>
-          <a href="{project.demo}" target="_blank" class="btn btn-outline-danger">Demo</a> 
-          <a href="{project.code}" target="_blank" class="btn btn-outline-light">Code</a>
+          {#if project.demo}<a href="{project.demo}" target="_blank" class="btn btn-outline-danger">Demo</a>{/if}
+          {#if project.code}<a href="{project.code}" target="_blank" class="btn btn-outline-light">Code</a>{/if}
         </div>
       </div>
     {/each}

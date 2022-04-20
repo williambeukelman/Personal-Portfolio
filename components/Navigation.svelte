@@ -1,9 +1,4 @@
 <style>
-  nav#primary {
-    position: absolute;
-    top: 0;
-    z-index: 11;
-  }
   nav#toggle {
     position: absolute;
     top: 0;
