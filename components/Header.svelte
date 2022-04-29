@@ -1,5 +1,5 @@
 <script>
-  import profilePic from "../assets/avatar_sm.png";
+  let profilePic = "/assets/avatar_sm.png";
 </script>
 
 <style>

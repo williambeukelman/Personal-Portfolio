@@ -20,7 +20,7 @@
 </style>
 
 <main>
-  <Navigation id="top"/>
+  <Navigation/>
   <Header/>
   <Skills/>
   <Projects/>

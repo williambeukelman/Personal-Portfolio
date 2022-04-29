@@ -82,7 +82,7 @@
   import { scale } from "svelte/transition";
   import { skill } from "../stores.js";
   import { icons } from "../stores.js";
-  import screenshot_paper from "../assets/screenshot_paper.png";
+  let screenshot_paper = "/assets/screenshot_paper.png";
   let projects = [
     {
       title: "Music Library Application",
@@ -136,8 +136,8 @@
       : projects.filter(item => {
           return item.badges.includes($skill);
           /*.some(badge => {
-                  return badge === $skill;
-                });*/
+                    return badge === $skill;
+                  });*/
         });
 </script>
 

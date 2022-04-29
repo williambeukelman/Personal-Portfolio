@@ -2,6 +2,29 @@
 </style>
 
 <script>
+  let formEmail = "";
+  let formSubject = "";
+  let formMsg = "";
+  $: formFilled =
+    formEmail.length > 1 && formSubject.length > 1 && formMsg.length > 1;
+  $: validEmail = /\S+@\S+\.\S+/.test(formEmail);
+  $: SubmitText = ValidForm
+    ? "Send"
+    : !formFilled
+    ? "Fill Out Form"
+    : "Invalid Email Format";
+  $: SubmitStyle = ValidForm
+    ? "btn-primary"
+    : !formFilled
+    ? "btn-secondary"
+    : "btn-danger";
+  $: ValidForm = formFilled && validEmail;
+  function handleFormSubmit() {
+    //Clear form
+    formEmail = "";
+    formSubject = "";
+    formMsg = "";
+  }
 </script>
 
 <div class="modal fade py-5" tabindex="-1" role="dialog" id="modalMessage" aria-hidden="true">
@@ -15,18 +38,18 @@
       <div class="modal-body p-5 pt-0">
         <form class="">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-4" id="inputEmail" placeholder="name@example.com">
+            <input bind:value={formEmail} type="email" class="form-control rounded-4" id="inputEmail" placeholder="name@example.com">
             <label for="inputEmail">Your email</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control rounded-4" id="inputSubject" placeholder="Subject line">
+            <input bind:value={formSubject} type="text" class="form-control rounded-4" id="inputSubject" placeholder="Subject line">
             <label for="inputSubject">Subject</label>
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control rounded-4" id="inputMessage"></textarea>
+            <textarea bind:value={formMsg} class="form-control rounded-4" id="inputMessage"></textarea>
             <label for="inputMessage">Message</label>
           </div>
-          <button type="button" class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" data-bs-dismiss="modal">Send</button>
+          <button disabled={!ValidForm} on:click={handleFormSubmit} type="button" class="w-100 mb-2 btn btn-lg rounded-4 {SubmitStyle}" data-bs-dismiss="modal">{SubmitText}</button>
         </form>
       </div>
     </div>
