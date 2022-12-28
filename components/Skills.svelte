@@ -84,6 +84,14 @@
     {
       name: "Arduino",
       btn: false
+    },
+    {
+      name: "PHP",
+      btn: false
+    },
+    {
+      name: "SQL",
+      btn: false
     }
   ];
   function updateSkill(value) {

@@ -58,9 +58,10 @@
 
 <div class="container-fluid d-flex justify-content-center bg-dark text-white py-3">
   <div class="row">
-    <div class="col-6">
+    <div class="col">
       <p>Website & Design by William Beukelman</p>
     </div>
+    <!--
     <div class="col-6">
       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMessage">
       <span class="badge">
@@ -70,5 +71,6 @@
       </span>
       Send a message</button>
     </div>
+    -->
   </div>
 </div>

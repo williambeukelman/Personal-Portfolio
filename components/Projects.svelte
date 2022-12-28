@@ -120,14 +120,6 @@
       code: "https://codesandbox.io/s/rgx9lb",
       image: "https://williambeukelman.github.io/screenshot-nursery-website.png",
       badges: ["Javascript", "Jquery"]
-    },
-    {
-      title: "Educational Game Proposal",
-      desc: "A project proposal complete with concept maps and forms.",
-      demo: "",
-      code: "https://www.overleaf.com/read/nftsycdnxdrb",
-      image: screenshot_paper,
-      badges: []
     }
   ];
   $: filterProjects =
@@ -136,8 +128,8 @@
       : projects.filter(item => {
           return item.badges.includes($skill);
           /*.some(badge => {
-                    return badge === $skill;
-                  });*/
+                      return badge === $skill;
+                    });*/
         });
 </script>
 

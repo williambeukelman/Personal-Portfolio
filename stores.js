@@ -23,5 +23,9 @@ export const icons = writable({
   Python:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   Arduino:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+  PHP:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  SQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
 });
